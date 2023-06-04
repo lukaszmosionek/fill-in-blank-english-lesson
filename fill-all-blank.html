@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    
+<style>
+    input{
+        width: 120px!important;
+        height: 30px!important;
+    }
+    
+</style>
+
+    <div class="container border">
+
+        <div class="h5 mb-4">Fill in the missing place</div>
+        <div class="h7 mb-2">infinitive / past simple / past participle</div>
+
+    <div class="row">
+
+        <div class="my-2 d-inline-flex">
+            <div class="">be</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="was"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="been"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class="">become</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="became"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="become"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class=""><input class="form-control" type="text" data-correct-answer="choose"></div>
+            <div class="mx-2"> / </div>
+            <div class="">chose</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="chosen"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class="">eat</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="ate"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="eaten"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class=""><input class="form-control" type="text" data-correct-answer="find"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="found"></div>
+            <div class="mx-2"> / </div>
+            <div class="">found</div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class="">get</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="got"></div>
+            <div class="mx-2"> / </div>
+            <div class="">got</div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class=""><input class="form-control" type="text" data-correct-answer="go"></div>
+            <div class="mx-2"> / </div>
+            <div class="">went</div>
+            <div class="mx-2"> / </div>
+            <div class="">gone</div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class="">have</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="had"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="had"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class=""><input class="form-control" type="text" data-correct-answer="keep"></div>
+            <div class="mx-2"> / </div>
+            <div class="">kept</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="kept"></div>
+        </div>
+
+        <div class="my-2 d-inline-flex">
+            <div class="">lie</div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="lay"></div>
+            <div class="mx-2"> / </div>
+            <div class=""><input class="form-control" type="text" data-correct-answer="lain"></div>
+        </div>
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('input[data-correct-answer]').on('change', function(){
+        let currentValue = $(this).val();
+        let correctValue = $(this).data('correct-answer');
+        
+        if( currentValue == correctValue ){
+            $(this).addClass('is-valid');
+            $(this).removeClass('is-invalid');
+        } else {
+            $(this).addClass('is-invalid');
+            $(this).removeClass('is-valid');
+        }
+    });
+</script>
