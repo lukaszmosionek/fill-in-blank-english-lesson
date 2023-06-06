@@ -13,12 +13,21 @@
         width: 120px!important;
         height: 30px!important;
     }
+
+    @media screen and (max-width: 500px) {
+      input[data-correct-answer]{
+            width: 80px!important;
+            height: 30px!important;
+            font-size: 11px;
+            padding: 5px;
+        }
+    }
     
 </style>
 
     <div class="container border">
 
-        <div class="h5 mb-4">Fill in the missing place</div>
+        <div class="h5 mb-4 mt-3">Fill in the missing place</div>
         <div class="h7 mb-2">infinitive / past simple / past participle</div>
 
     <div class="row">
@@ -119,7 +128,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $('input[data-correct-answer]').on('change', function(){
-        let currentValue = $(this).val();
+        let currentValue = $(this).val().toLowerCase().trim();
         let correctValue = $(this).data('correct-answer');
         
         if( currentValue == correctValue ){
