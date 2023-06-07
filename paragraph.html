@@ -1,0 +1,91 @@
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<style>
+    input[data-correct-answer]{
+        width: 120px!important;
+        height: 30px!important;
+        display: inline-block;
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: 500px) {
+      input[data-correct-answer]{
+            width: 80px!important;
+            height: 30px!important;
+            font-size: 11px;
+            padding: 5px;
+        }
+    }
+    
+</style>
+
+
+
+    <div class="container border">
+
+        <div class="h5 mb-4 mt-3">Fill in the missing words in the genitive case using the plural endings.</div>
+        <!-- <div class="h7 mb-2">infinitive / past simple / past participle</div> -->
+
+        <div class="row">
+
+            <p>
+                    Polska to wspaniale rozwijający się kraj od czasu wejścia do Unii Europejskiej, ale od tego czasu pojawiły się małe problemy. Wiele tutejszych 
+                      <input class="form-control" data-correct-answer="rodzin"> (rodzina), mnie wliczając, ma problem ze znalezieniem odpowiednich 
+                      <input class="form-control" data-correct-answer="specjalistów"> (specjalista). Nasi rodacy się rozjechali po świecie za pracą i za pieniędzmi.
+                
+            </p>
+
+            <p>
+                    Potrzebuję hydraulika, bo zepsuła mi się kanalizacja w domu. Nie ma w Polsce <input class="form-control" data-correct-answer="hydraulików"> 
+                     (hydraulik)! Potrzebuję mechanika, bo silnik mi w samochodzie rdzewieje. Nie ma w Polsce <input class="form-control" data-correct-answer="mechaników"> 
+                     (mechanik)! Chciałem wybudować altankę na działce, nie ma naszych pracowitych <input class="form-control" data-correct-answer="budowlańców"> 
+                     (budowlaniec).
+                
+            </p>
+
+            <p>
+                    A moje zdrowie? Potrzebuję dobrego lekarza, bo głowa mnie boli. Nie ma fachowych  <input class="form-control" data-correct-answer="lekarzy"> 
+                     (lekarz) w Polsce. Zęby mnie bolą, nie ma  <input class="form-control" data-correct-answer="dentystów"> 
+                     (dentysta). Oczy mnie bolą, nie ma  <input class="form-control" data-correct-answer="okulistów"> 
+                     (okulista). Psychicznie nie wytrzymuję, nie ma  <input class="form-control" data-correct-answer="psychologów"> 
+                     (psycholog).      
+            </p>
+
+            <p>
+                Nie ma znakomitych  <input class="form-control" data-correct-answer="piekarzy"> 
+                 (piekarz),  <input class="form-control" data-correct-answer="kucharzy"> 
+                 (kucharz), utalentowanych  <input class="form-control" data-correct-answer="pisarzy"> 
+                 (pisarz),  <input class="form-control" data-correct-answer="malarzy"> 
+                 (malarz),  <input class="form-control" data-correct-answer="muzyków"> 
+                 (muzyk) i  <input class="form-control" data-correct-answer="poetów"> 
+                 (poeta). Mamy naszą Unię Europejską! Szkoda, że nie potrzebuję inteligentnych  <input class="form-control" data-correct-answer="polityków"> 
+                 (polityk), bo ich tu nie brakuje!
+            </p>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $('input[data-correct-answer]').on('change', function(){
+        let currentValue = $(this).val().toLowerCase().trim();
+        let correctValue = $(this).data('correct-answer');
+        
+        if( currentValue == correctValue ){
+            $(this).addClass('is-valid');
+            $(this).removeClass('is-invalid');
+        } else {
+            $(this).addClass('is-invalid');
+            $(this).removeClass('is-valid');
+        }
+    });
+</script>
